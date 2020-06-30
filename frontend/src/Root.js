@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import App from './App'
+import HomeContainer from './containers/home/index'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/' component={HomeContainer} />
       </Switch>
     </Router>
   </Provider>
