@@ -6,15 +6,15 @@ import NavBar from '../../components/navbar'
 import Aside from '../../components/menu'
 import Content from '../../components/main-container'
 
-import FormContainer from './components/Form'
+import FormContainer from '../home/components/Form'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as DiscoveryActions from './action'
+import * as DiscoveryActions from '../home/action'
 
 
 
-class HomeContainer extends Component {
+class AnotationContainer extends Component {
   constructor(props) {
     super(props)
 
@@ -36,14 +36,14 @@ class HomeContainer extends Component {
         <NavBar title='Meu diário, meus registros' />
         <Aside />
         <Content>
-          <FormContainer handleSubmitForm={this.submitForm} />
+          
         </Content>
       </Container>
     )
   }
 }
 
-HomeContainer.propTypes = {
+AnotationContainer.propTypes = {
   createDiscovery: PropTypes.func
 }
 
@@ -55,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
 	return bindActionCreators(DiscoveryActions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(AnotationContainer)

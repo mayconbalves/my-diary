@@ -1,17 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { AsideMenu } from './styled'
+import { AsideMenu, List } from './styled'
+import { Link } from 'react-router-dom'
 
-const Menu = ({ children }) => {
+const Menu = () => {
   return (
     <AsideMenu>
-      {children}
+      <List>
+        <li><Link to="/">menu 1</Link></li>
+        <li><Link to="/anotations">menu 2</Link></li>
+      </List>
     </AsideMenu>
   )
-}
-
-Menu.propTypes = {
-  children: PropTypes.node.isRequired
 }
 
 export default Menu
