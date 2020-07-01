@@ -8,7 +8,9 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    background-color: rgba(249, 239, 220, 1);
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
   }
 `
 
