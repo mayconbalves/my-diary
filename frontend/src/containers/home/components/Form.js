@@ -13,7 +13,8 @@ const FormContainer = ({ handleSubmitForm }) => {
   
   const submitForm = () => {
     handleSubmitForm(values)
-    setValues({ found: '', description: '', dateTime: '', comments })
+    setValues({ found: '', description: '', dateTime: '', comments: '' })
+
   }
 
   const { found, description, dateTime, comments } = values

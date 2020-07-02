@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const CardBody = styled.div`
   border: solid 3px #000;
   border-radius: 25px;
-  width: 350px;
+  width: 300px;
   margin: 10px;
   display: inline-block;
   height: 200px;
