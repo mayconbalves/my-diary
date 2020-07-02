@@ -7,4 +7,8 @@ export const Container = styled.div`
     "nav nav nav nav"
     "aside content content content";
   overflow: auto;
+
+  @media(max-width: 768px) {
+    display: block;
+  }
 `

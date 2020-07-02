@@ -22,6 +22,11 @@ export const FormStyled = styled.form`
   &:hover {
     box-shadow: 10px 5px 5px black;
   }
+
+  @media(max-width: 768px) {
+    width: 90%;
+    min-width: 300px;
+  }
 `
 
 export const FormField = styled.div`

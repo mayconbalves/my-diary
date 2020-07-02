@@ -7,6 +7,11 @@ export const AsideMenu = styled.div`
   border-width: 0 3px 3px;
   height: 100%;
   max-width: 263px;
+
+  @media(max-width: 768px) {
+    display: grid;
+    max-width: 100%;
+  }
 `
 export const List = styled.ul`
   list-style: none;
@@ -15,6 +20,10 @@ export const List = styled.ul`
     background-color: blue;
     height: auto;
     text-align: center;
+  }
+
+  @media(max-width: 768px) {
+    margin: 0 auto;
   }
 `
 
