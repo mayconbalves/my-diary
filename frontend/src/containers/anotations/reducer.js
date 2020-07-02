@@ -1,6 +1,6 @@
 import {
-	CREATE_DISCOVERY,
-	CREATE_DISCOVERY_ERROR
+	GET_DISCOVERY,
+	GET_DISCOVERY_ERROR
 } from './action'
 
 const initialState = {
@@ -8,15 +8,15 @@ const initialState = {
 	error: null
 }
 
-export default function createDiscovery(state = initialState, action) {
+export default function getDiscovery(state = initialState, action) {
 	switch (action.type) {
-		case CREATE_DISCOVERY:
+		case GET_DISCOVERY:
 			return {
 				...state,
-				response: action.payload,
+				response: action.payload.data,
 				error: null
 			}
-		case CREATE_DISCOVERY_ERROR:
+		case GET_DISCOVERY_ERROR:
 			return {
 				response: [],
 				error: action.payload

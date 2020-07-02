@@ -21,12 +21,7 @@ class HomeContainer extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    this.props.getDiscoverys()
-  }
-
   submitForm = values => {
-    console.log(values, 'values')
     this.props.createDiscovery(values)
   }
   

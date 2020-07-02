@@ -6,11 +6,11 @@ import NavBar from '../../components/navbar'
 import Aside from '../../components/menu'
 import Content from '../../components/main-container'
 
-import FormContainer from '../home/components/Form'
+import Card from './components/Card'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as DiscoveryActions from '../home/action'
+import * as getDiscoveryActions from './action'
 
 
 
@@ -24,19 +24,19 @@ class AnotationContainer extends Component {
   componentDidMount() {
     this.props.getDiscoverys()
   }
-
-  submitForm = values => {
-    console.log(values, 'values')
-    this.props.createDiscovery(values)
-  }
-  
-    render() {
+  render() {
+    const { response } = this.props
+    const discoverys = response || []
     return (
       <Container>
         <NavBar title='Meu diário, meus registros' />
         <Aside />
         <Content>
-          
+          {
+            discoverys.map(discovery => (
+              <Card discovery={discovery} key={discovery._id} />
+            ))
+          }
         </Content>
       </Container>
     )
@@ -44,15 +44,15 @@ class AnotationContainer extends Component {
 }
 
 AnotationContainer.propTypes = {
-  createDiscovery: PropTypes.func
+  getDiscoverys: PropTypes.func
 }
 
-const mapStateToProps = ({ discoveryReducer }) => ({
-	response: discoveryReducer.response,
+const mapStateToProps = ({ getDiscoveryReducer }) => ({
+	response: getDiscoveryReducer.response,
 })
 
 const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators(DiscoveryActions, dispatch)
+	return bindActionCreators(getDiscoveryActions, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnotationContainer)
