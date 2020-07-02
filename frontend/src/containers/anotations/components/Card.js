@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CardBody, DivStyled, DivButton } from './styled'
+import { CardBody, DivStyled } from './styled'
 
 const Card = ({ discovery }) => {
-  const { found, description, dateTime} = discovery
+  const { found, description, dateTime, comments } = discovery
   return (
     <CardBody>
       <DivStyled>
@@ -15,9 +15,9 @@ const Card = ({ discovery }) => {
       <DivStyled>
         <p>{`Hora: ${dateTime}`}</p>
       </DivStyled>
-      <DivButton>
-        <button>Comentar</button>
-      </DivButton>
+      <DivStyled>
+        <p>{`Comentáio: ${comments}`}</p>
+      </DivStyled>
     </CardBody>
   )
 }

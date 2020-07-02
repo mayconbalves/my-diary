@@ -19,16 +19,3 @@ export const DivStyled = styled.div`
     top: 5px;
   }
 `
-
-export const DivButton = styled.div`
-  margin: 10px;
-
-  button {
-    padding: 10px;
-
-    &:hover {
-      background-color: #fff;
-      cursor: pointer;
-    }
-  }
-`

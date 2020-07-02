@@ -3,7 +3,8 @@ import { hoursMask } from '../../../components/utils/mask'
 import { InputStyled, FormStyled, FormField, ButtonStyled } from './styled'
 
 const FormContainer = ({ handleSubmitForm }) => {
-  const [values, setValues] = useState({found: '', description: '', dateTime: ''})
+  const [values, setValues] = useState(
+    {found: '', description: '', dateTime: '', comments: ''})
 
   const handleInputChange = e => {
     const {name, value} = e.target
@@ -12,10 +13,10 @@ const FormContainer = ({ handleSubmitForm }) => {
   
   const submitForm = () => {
     handleSubmitForm(values)
-    setValues({ found: '', description: '', dateTime: '' })
+    setValues({ found: '', description: '', dateTime: '', comments })
   }
 
-  const { found, description, dateTime } = values
+  const { found, description, dateTime, comments } = values
   return (
     <FormStyled>
       <h1>Minhas Descobertas:</h1>
@@ -54,8 +55,19 @@ const FormContainer = ({ handleSubmitForm }) => {
       </FormField>
 
       <FormField>
+        <h4>Comentários:</h4>
+        <InputStyled
+          type="text"
+          name="comments"
+          placeholder="Digite o seu comentário"
+          value={values.comments}
+          onChange={handleInputChange}
+        />
+      </FormField>
+
+      <FormField>
       {
-        found && description && dateTime &&
+        found && description && dateTime && comments &&
         <ButtonStyled
           id="send-button"
           type='button' 
