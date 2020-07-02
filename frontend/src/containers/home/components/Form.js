@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { hoursMask } from '../../../components/utils/mask'
 
 const InputStyled = styled.input`
   flex-grow: 1;
   font-size: 1rem;
   line-height: 2rem;
   vertical-align: middle;
+  width: 250px;
   &::-webkit-input-placeholder {
     color: gray;
   }
@@ -78,12 +80,12 @@ const FormContainer = ({ handleSubmitForm }) => {
       </FormField>
 
       <FormField>
-        <h4>Horas:</h4>
+        <h4>Horas e minutos:</h4>
         <InputStyled
           type="text"
           name="dateTime"
-          placeholder="Escolha a hora"
-          value={values.dateTime}
+          placeholder="Escolha a hora e os minutos"
+          value={hoursMask(values.dateTime)}
           onChange={handleInputChange}
         />
       </FormField>
