@@ -1,43 +1,6 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { hoursMask } from '../../../components/utils/mask'
-
-const InputStyled = styled.input`
-  flex-grow: 1;
-  font-size: 1rem;
-  line-height: 2rem;
-  vertical-align: middle;
-  width: 250px;
-  &::-webkit-input-placeholder {
-    color: gray;
-  }
-`
-
-const FormStyled = styled.form`
-  display: grid;
-  border: 2px solid #000;
-  margin: 10% auto;
-  width: 500px;
-  h1 {
-    text-align: center;
-  }
-  &:hover {
-    box-shadow: 10px 5px 5px black;
-  }
-`
-
-const FormField = styled.div`
-  margin: 5%;
-`
-
-const ButtonStyled = styled.button`
-  padding: 10px;
-
-  &:hover {
-    background-color: #fff;
-    cursor: pointer;
-  }
-`
+import { InputStyled, FormStyled, FormField, ButtonStyled } from './styled'
 
 const FormContainer = ({ handleSubmitForm }) => {
   const [values, setValues] = useState({found: '', description: '', dateTime: ''})
