@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const AsideMenu = styled.div`
   grid-area: aside;
@@ -12,13 +13,18 @@ export const List = styled.ul`
   
   li {
     background-color: blue;
-    border: 1px solid #000;
     height: auto;
     text-align: center;
   }
+`
 
-  a {
-    display: block;
-    padding: 15px;
+export const StyledLink = styled(Link)`
+  color: #000;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+
+  &:hover {
+    color: #f00;
   }
 `

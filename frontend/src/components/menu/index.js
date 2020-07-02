@@ -1,13 +1,12 @@
 import React from 'react'
-import { AsideMenu, List } from './styled'
-import { Link } from 'react-router-dom'
+import { AsideMenu, List, StyledLink } from './styled'
 
 const Menu = () => {
   return (
     <AsideMenu>
       <List>
-        <li><Link to="/">menu 1</Link></li>
-        <li><Link to="/anotations">menu 2</Link></li>
+        <li><StyledLink to="/">Adicionar descoberta</StyledLink></li>
+        <li><StyledLink to="/anotations">Todas descobertas</StyledLink></li>
       </List>
     </AsideMenu>
   )

@@ -48,11 +48,11 @@ const FormContainer = ({ handleSubmitForm }) => {
   }
   
   const submitForm = () => {
-    const { found, description, dateTime } = values
-    if(!found || !description || !dateTime) return
     handleSubmitForm(values)
+    setValues({ found: '', description: '', dateTime: '' })
   }
 
+  const { found, description, dateTime } = values
   return (
     <FormStyled>
       <h1>Minhas Descobertas:</h1>
@@ -91,7 +91,16 @@ const FormContainer = ({ handleSubmitForm }) => {
       </FormField>
 
       <FormField>
-        <ButtonStyled type='button' onClick={submitForm}>Enviar</ButtonStyled>
+      {
+        found && description && dateTime &&
+        <ButtonStyled
+          id="send-button"
+          type='button' 
+          onClick={submitForm}
+        >
+          Enviar
+        </ButtonStyled>
+      }
       </FormField>
     </FormStyled>
   )
