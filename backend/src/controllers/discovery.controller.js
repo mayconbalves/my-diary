@@ -5,7 +5,8 @@ module.exports = {
     const discovery = await Discovery.create({
       found: req.body.found,
       description: req.body.description,
-      dateTime: req.body.dateTime
+      dateTime: req.body.dateTime,
+      comments: req.body.comments
     })
 
     return res.json(discovery)
