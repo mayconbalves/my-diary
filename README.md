@@ -6,7 +6,7 @@ yarn
 
 ## How to install project
 
-git clone: git@github.com:mayconbalves/my-diary.git or https://github.com/mayconbalves/my-diary
+git clone: `git@github.com:mayconbalves/my-diary.git` or `https://github.com/mayconbalves/my-diary`
 
 Enter backend folder and run command: `npm i` or `yarn`
 
